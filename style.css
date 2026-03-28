@@ -69,3 +69,8 @@ footer {
 .zero {
     grid-column: span 2;
 }
+
+footer a svg {
+    vertical-align: middle;
+    margin-left: 8px;
+}

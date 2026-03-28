@@ -88,3 +88,7 @@ footer a svg {
 .operator {
     background-color: rgb(252, 79, 79);
 }
+
+.buttons #equal {
+    background-color: greenyellow;
+}

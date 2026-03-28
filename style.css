@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(90deg, #00b09b, #f7d000, #4facfe);
+    background: linear-gradient(320deg, #00b09b, #f7d000, #4facfe);
     display: flex;
     font-family: 'Segoe UI', sans-serif;
     color: #ffffff;
@@ -47,6 +47,14 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #c0e8d0; 
 }
 
 .clear {
@@ -64,6 +72,8 @@ footer {
 .buttons button {
     padding: 16px 0;
     border: 2px solid black;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
 .zero {
@@ -73,4 +83,8 @@ footer {
 footer a svg {
     vertical-align: middle;
     margin-left: 8px;
+}
+
+.operator {
+    background-color: rgb(252, 79, 79);
 }

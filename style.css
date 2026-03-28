@@ -1,11 +1,71 @@
 body {
     background: linear-gradient(90deg, #00b09b, #f7d000, #4facfe);
+    display: flex;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 footer {
+    color: #f0f0f0;
+    background: rgba(0, 0, 0, 0.3);
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.screen {
+    width: 100%;
+    height: 100px;
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    font-size: 2rem;
+    box-sizing: border-box;
+    border: 2px black solid;
+    border-radius: 8px;
+}
+
+.wrapper {
+    background-color: #808080;
+    padding: 16px;
+    border: 2px black solid;
+    border-radius: 8px;
+    width: 320px;
+    height: 100%;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.clear {
+    margin-top: 8px;
+    background-color: #e88080;
+    grid-column: span 2;
+}
+
+.delete {
+    margin-top: 8px;
+    background-color: #9999dd;
+    grid-column: span 2;
+}
+
+.buttons button {
+    padding: 16px 0;
+    border: 2px solid black;
+}
+
+.zero {
+    grid-column: span 2;
 }

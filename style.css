@@ -1,0 +1,11 @@
+body {
+    background: linear-gradient(90deg, #00b09b, #f7d000, #4facfe);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

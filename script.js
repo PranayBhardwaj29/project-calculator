@@ -2,6 +2,28 @@ const screen = document.querySelector(".screen");
 const buttons = document.querySelector(".buttons");
 
 let currInput = "";
+let operand1 = "";
+let operand2 = "";
+let operator = "";
+let result = "";
+
+
+function calculate(operand1, operator, operand2) {
+    operand1 = Number(operand1);
+    operand2 = Number(operand2);
+    if(operator == '+') {
+        return operand1 + operand2;
+    } else if (operator == '-') {
+        return operand1 - operand2;
+    } else if (operator == '/') {
+        if(operand2 === 0) {
+            return "Error: Can't Divide By 0";
+        }
+        return operand1 / operand2;
+    } else if (operator == "*") {
+        return operand1 * operand2;
+    }
+}
 
 buttons.addEventListener("click", function (e) {
     if (!isNaN(e.target.textContent)) {
@@ -17,5 +39,15 @@ buttons.addEventListener("click", function (e) {
     } else if (e.target.textContent === '←') {
         currInput = currInput.toString().slice(0, -1);
         screen.textContent = currInput || '0';
+    } else if (['+', '-', '*', '/'].includes(e.target.textContent)) {
+        operand1 = currInput;
+        operator = e.target.textContent;
+        currInput = "";
+        screen.textContent = operand1 + " " + operator;
+    } else if (e.target.textContent === '=') {
+        operand2 = currInput;
+        result = calculate(operand1, operator, operand2);
+        screen.textContent = result;
+        currInput = result;
     }
 });

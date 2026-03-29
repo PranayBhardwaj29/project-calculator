@@ -12,16 +12,16 @@ function calculate(operand1, operator, operand2) {
     operand1 = Number(operand1);
     operand2 = Number(operand2);
     if(operator == '+') {
-        return operand1 + operand2;
+        return parseFloat((operand1 + operand2).toFixed(10));
     } else if (operator == '-') {
-        return operand1 - operand2;
+        return parseFloat((operand1 - operand2).toFixed(10));
     } else if (operator == '/') {
         if(operand2 === 0) {
             return "Error: Can't Divide By 0";
         }
-        return operand1 / operand2;
+        return parseFloat((operand1 / operand2).toFixed(10));
     } else if (operator == "*") {
-        return operand1 * operand2;
+        return parseFloat((operand1 * operand2).toFixed(10));
     }
 }
 

@@ -40,7 +40,11 @@ buttons.addEventListener("click", function (e) {
         currInput = currInput.toString().slice(0, -1);
         screen.textContent = currInput || '0';
     } else if (['+', '-', '*', '/'].includes(e.target.textContent)) {
-        operand1 = currInput;
+        if((operand1.length != 0 && operator.length != 0) && currInput.length != 0) {
+            operand1 = calculate(operand1, operator, currInput);
+        } else {
+            operand1 = currInput;
+        }
         operator = e.target.textContent;
         currInput = "";
         screen.textContent = operand1 + " " + operator;

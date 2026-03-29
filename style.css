@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(320deg, #00b09b, #f7d000, #4facfe);
     display: flex;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Roboto Slab', sans-serif;
     color: #ffffff;
     align-items: center;
     justify-content: center;
@@ -74,6 +74,7 @@ footer {
     border: 2px solid black;
     border-radius: 8px;
     font-size: 16px;
+    font-family: inherit;
 }
 
 .zero {

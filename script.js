@@ -91,6 +91,10 @@ document.addEventListener("keydown", function(e) {
     allButtons.forEach(function(button) {
         if (button.textContent === key) {
             button.click();
+            button.classList.add("pressed");
+            setTimeout(function() {
+                button.classList.remove("pressed");
+            }, 100);
         }
     });
 });

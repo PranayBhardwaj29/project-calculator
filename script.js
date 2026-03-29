@@ -49,9 +49,13 @@ buttons.addEventListener("click", function (e) {
         currInput = "";
         screen.textContent = operand1 + " " + operator;
     } else if (e.target.textContent === '=') {
-        operand2 = currInput;
-        result = calculate(operand1, operator, operand2);
-        screen.textContent = result;
-        currInput = result;
+        if(operand1.length === 0 || operator.length === 0 || currInput.length === 0) {
+            screen.textContent = "Error!";
+        } else {
+            operand2 = currInput;
+            result = calculate(operand1, operator, operand2);
+            screen.textContent = result;
+            currInput = result;
+        }
     }
 });

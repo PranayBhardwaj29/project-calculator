@@ -51,6 +51,11 @@ buttons.addEventListener("click", function (e) {
     } else if (e.target.textContent === '←') {
         currInput = currInput.toString().slice(0, -1);
         screen.textContent = currInput || '0';
+    } else if (e.target.textContent === '.') {
+        if (!currInput.includes('.')) {
+            currInput = currInput === "" ? "0." : currInput + ".";
+            screen.textContent = currInput;
+        }
     } else if (['+', '-', '*', '/'].includes(e.target.textContent)) {
         if((operand1.length != 0 && operator.length != 0) && currInput.length != 0) {
             operand1 = calculate(operand1, operator, currInput);

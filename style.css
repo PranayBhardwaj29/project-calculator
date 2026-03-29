@@ -53,7 +53,7 @@ footer {
 
 .buttons button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow:0 4px 8px rgba(0, 0, 0, 0.4);
     background-color: #c0e8d0; 
 }
 
@@ -75,10 +75,7 @@ footer {
     border-radius: 8px;
     font-size: 16px;
     font-family: inherit;
-}
-
-.zero {
-    grid-column: span 2;
+    box-shadow: 0px 6px 0px #222;
 }
 
 footer a svg {
@@ -92,4 +89,9 @@ footer a svg {
 
 .buttons #equal {
     background-color: greenyellow;
+}
+
+.buttons button:active {
+    box-shadow: 0px 2px 0px #222;
+    transform: translateY(4px);
 }

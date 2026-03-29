@@ -6,6 +6,7 @@ let operand1 = "";
 let operand2 = "";
 let operator = "";
 let result = "";
+let resultDisplayed = false;
 
 
 function calculate(operand1, operator, operand2) {
@@ -27,6 +28,12 @@ function calculate(operand1, operator, operand2) {
 
 buttons.addEventListener("click", function (e) {
     if (!isNaN(e.target.textContent)) {
+        if(resultDisplayed) {
+            currInput = "";
+            operand1 = "";
+            operator = "";
+            resultDisplayed = false;
+        }
         if (currInput === "") {
             currInput = e.target.textContent;
         } else {
@@ -39,19 +46,22 @@ buttons.addEventListener("click", function (e) {
         operand1 = "";
         operator = "";
         operand2 = "";
+        result = "";
+        resultDisplayed = false;
     } else if (e.target.textContent === '←') {
         currInput = currInput.toString().slice(0, -1);
         screen.textContent = currInput || '0';
     } else if (['+', '-', '*', '/'].includes(e.target.textContent)) {
         if((operand1.length != 0 && operator.length != 0) && currInput.length != 0) {
             operand1 = calculate(operand1, operator, currInput);
-        } else {
+        } else if(currInput != "") {
             operand1 = currInput;
         }
         operator = e.target.textContent;
         currInput = "";
         screen.textContent = operand1 + " " + operator;
     } else if (e.target.textContent === '=') {
+        resultDisplayed = true;
         if(operand1.length === 0 || operator.length === 0 || currInput.length === 0) {
             screen.textContent = "Error!";
         } else {

@@ -77,3 +77,20 @@ buttons.addEventListener("click", function (e) {
         }
     }
 });
+
+document.addEventListener("keydown", function(e) {
+    const keyMap = {
+        "Enter": "=",
+        "Backspace": "←",
+        "Escape": "CLEAR",
+    };
+
+    const key = keyMap[e.key] || e.key;
+    const allButtons = document.querySelectorAll(".buttons button");
+
+    allButtons.forEach(function(button) {
+        if (button.textContent === key) {
+            button.click();
+        }
+    });
+});

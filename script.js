@@ -36,6 +36,9 @@ buttons.addEventListener("click", function (e) {
     } else if (e.target.textContent === 'CLEAR') {
         screen.textContent = 0;
         currInput = "";
+        operand1 = "";
+        operator = "";
+        operand2 = "";
     } else if (e.target.textContent === '←') {
         currInput = currInput.toString().slice(0, -1);
         screen.textContent = currInput || '0';
